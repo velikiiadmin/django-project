@@ -30,7 +30,7 @@ class NewsForm(forms.ModelForm):
         }
 
     def clean_title(self):
-        title = self.changed_data['title']
+        title = self.cleaned_data['title']
         if re.match(r'\d', title):
             raise ValidationError('Название не должно начинаться с цифры')
         return title
