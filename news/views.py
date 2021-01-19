@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import ListView, DetailView, CreateView
+from django.urls import reverse_lazy
 from .models import News, Category
 from .forms import NewsForm
 
@@ -45,6 +46,7 @@ class ViewNews(DetailView):
 class CreateNews(CreateView):
     form_class = NewsForm
     template_name = 'news/add_news.html'
+    success_url = reverse_lazy('home')
 
 
 # Контроллер функции
