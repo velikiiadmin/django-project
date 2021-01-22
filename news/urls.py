@@ -3,6 +3,10 @@ from .views import *
 
 urlpatterns = [
     # Контроллер функции
+    path('register/', register, name='register'),
+    path('login/', user_login, name='login'),
+    path('loginout/', user_logout, name='logout'),
+    path('sendmail/', email_send, name='sendmail'),
     # path('', index, name='home'),
     # Контроллер класс
     path('', HomeNews.as_view(), name='home'),

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}
+    contact form
+{% endblock %}
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">Send</button>
+    </form>
+{% endblock %}
